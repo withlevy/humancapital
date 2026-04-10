@@ -665,58 +665,75 @@ footer {
     c.width = W; c.height = H;
     const ctx = c.getContext('2d');
     const P = 56;
+    const BAR_H = 52;
 
     /* Background */
     ctx.fillStyle = RE; ctx.fillRect(0, 0, W, H);
 
     /* Eyebrow */
-    ctx.font = "600 13px 'IBM Plex Mono'";
+    ctx.font = "600 12px 'IBM Plex Mono'";
     ctx.letterSpacing = '2px';
     ctx.fillStyle = 'rgba(249,249,248,0.62)';
+    ctx.textAlign = 'left';
     ctx.fillText('HUMAN CAPITAL QUARTERLY', P, P + 16);
 
-    /* "FREE." */
-    ctx.font = "900 196px 'Overpass'";
-    ctx.letterSpacing = '-8px';
-    ctx.fillStyle = WH;
-    ctx.fillText('FREE.', P - 6, 295);
-
-    /* "APRIL 14." */
-    ctx.font = "900 90px 'Overpass'";
+    /* Left column headline */
+    ctx.font = "900 68px 'Overpass'";
     ctx.letterSpacing = '-3px';
-    ctx.fillStyle = CA;
-    ctx.fillText('APRIL 14.', P - 2, 400);
+    ctx.fillStyle = WH;
+    ctx.fillText('MAKE YOUR', P - 4, 172);
+    ctx.fillText('NEXT MOVE', P - 4, 250);
+    ctx.fillText('WITH CONFIDENCE.', P - 4, 328);
 
-    /* Serif tagline */
-    ctx.font = "italic 400 35px 'Instrument Serif'";
+    /* FREE. APRIL 14. */
+    ctx.font = "900 36px 'Overpass'";
+    ctx.letterSpacing = '-1px';
+    ctx.fillStyle = CA;
+    ctx.fillText('FREE.  APRIL 14.', P - 4, 370);
+
+    /* Italic serif tagline */
+    ctx.font = "italic 400 27px 'Instrument Serif'";
     ctx.letterSpacing = '0px';
     ctx.fillStyle = 'rgba(249,249,248,0.9)';
-    ctx.fillText('Spring Forum \u2014 MLK Jr. Memorial Library', P, 458);
+    ctx.fillText('For job-seekers and anyone trying to figure out what\u2019s next.', P, 438);
 
     /* URL */
-    ctx.font = "400 14px 'IBM Plex Mono'";
+    ctx.font = "400 13px 'IBM Plex Mono'";
     ctx.letterSpacing = '1px';
     ctx.fillStyle = 'rgba(249,249,248,0.55)';
-    ctx.fillText('HUMANCAPITAL.WITHLEVY.COM', P, 490);
+    ctx.fillText('HUMANCAPITAL.WITHLEVY.COM', P, 470);
 
-    /* QR card */
-    if (qrCanvas) {
-      const QS = 194, QP = 18;
-      const QX = W - P - QS - QP * 2;
-      const QY = Math.round((H - 52 - QS - QP * 2 - 30) / 2);
-      roundRect(ctx, QX, QY, QS + QP * 2, QS + QP * 2 + 34, 6);
-      ctx.fillStyle = WH; ctx.fill();
-      ctx.drawImage(qrCanvas, QX + QP, QY + QP, QS, QS);
-      ctx.font = "600 11px 'IBM Plex Mono'";
-      ctx.letterSpacing = '1px';
-      ctx.fillStyle = CA;
-      ctx.textAlign = 'center';
-      ctx.fillText('SCAN TO REGISTER', QX + QP + QS / 2, QY + QP + QS + 24);
-      ctx.textAlign = 'left';
-    }
+    /* Right column benefits box — top aligns with cap-height of "MAKE YOUR" (y≈122),
+       bottom aligns with baseline of "WITH CONFIDENCE." (y=328, so RH=207) */
+    const BP = 16;
+    const RW = 330;                // narrow to content width
+    const RX = W - P - RW;        // right-aligned to margin (x=814)
+    const RY = 122;
+    const RH = 253;   // bottom aligns with "FREE. APRIL 14." (baseline y=370, +5px)
+    ctx.fillStyle = CA;
+    ctx.fillRect(RX, RY, RW, RH);
+
+    /* "WHAT TO EXPECT" label */
+    ctx.font = "600 10px 'IBM Plex Mono'";
+    ctx.letterSpacing = '2px';
+    ctx.fillStyle = 'rgba(249,249,248,0.45)';
+    ctx.fillText('WHAT TO EXPECT', RX + BP, RY + 22);
+
+    /* Divider */
+    ctx.fillStyle = 'rgba(249,249,248,0.12)';
+    ctx.fillRect(RX + BP, RY + 32, RW - BP * 2, 1);
+
+    /* Benefit items */
+    const benefits = ['Hands-on workshops.', 'Community of peers.', 'Expert insights.'];
+    ctx.font = "700 28px 'Overpass'";
+    ctx.letterSpacing = '-0.5px';
+    ctx.fillStyle = WH;
+    benefits.forEach((item, i) => {
+      ctx.fillText(item, RX + BP, RY + 32 + 42 + i * 58);
+    });
 
     /* Bottom bar */
-    ctx.fillStyle = CA; ctx.fillRect(0, H - 52, W, 52);
+    ctx.fillStyle = CA; ctx.fillRect(0, H - BAR_H, W, BAR_H);
     ctx.font = "400 12px 'IBM Plex Mono'";
     ctx.letterSpacing = '1px';
     ctx.fillStyle = 'rgba(249,249,248,0.6)';
