@@ -6,7 +6,7 @@
 <title>Ad 01 — Live Build Workshop</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;600&family=Overpass:wght@800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;600&family=Overpass:wght@800;900&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -104,24 +104,43 @@
   .wordmark-main {
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 600;
-    font-size: 28px;
+    font-size: 16px;
     letter-spacing: 0.06em;
     color: #F9F9F8;
     text-transform: uppercase;
     display: block;
-    line-height: 1;
+    line-height: 1.3;
   }
 
-  .wordmark-sub {
-    font-family: 'IBM Plex Mono', monospace;
-    font-weight: 400;
-    font-size: 11px;
-    letter-spacing: 0.12em;
+  .cta-main {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 0.01em;
     color: #F9F9F8;
-    opacity: 0.45;
+  }
+  .cta-sub {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    color: #F9F9F8;
+    opacity: 0.6;
+    margin-top: 6px;
     text-transform: uppercase;
-    display: block;
-    margin-top: 5px;
+  }
+
+  .scribble {
+    position: absolute;
+    right: 90px;
+    top: 170px;
+    font-family: 'Caveat', cursive;
+    font-size: 40px;
+    color: rgba(249,249,248,0.85);
+    transform: rotate(-14deg);
+    z-index: 6;
+    white-space: nowrap;
+    pointer-events: none;
   }
 
   /* Red block detail — bottom left corner accent */
@@ -138,18 +157,19 @@
 <body>
 <div class="ad">
   <div class="corner-block"></div>
+  <div class="scribble">it's free!</div>
   <div class="content">
     <div class="top">
       <div class="accent-line"></div>
       <h1 class="headline">Build<br>something<br>real.</h1>
-      <p class="subtext">Live AI Workshop &mdash; April 14</p>
+      <p class="subtext">Live AI Workshop &mdash; Tuesday, April 14</p>
+    </div>
+    <div class="cta-block">
+      <p class="cta-main">Human Capital Quarterly: Your next move starts here.</p>
+      <p class="cta-sub">Hands-on workshops &nbsp;|&nbsp; Hear from experts &nbsp;|&nbsp; Build community</p>
     </div>
     <div class="bottom">
-      <span class="tag">MLK Memorial Library &middot; Washington D.C. &middot; Free</span>
-      <div class="wordmark">
-        <span class="wordmark-main">HCQ</span>
-        <span class="wordmark-sub">Human Capital Quarterly</span>
-      </div>
+      <span class="tag">MLK Jr Memorial Library &middot; Washington D.C. &middot; Free</span>
     </div>
   </div>
 </div>
