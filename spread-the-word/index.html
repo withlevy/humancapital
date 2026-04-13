@@ -175,40 +175,6 @@ a { color: inherit; text-decoration: none; }
   margin-top:    calc(var(--hfs) * -0.26);
   margin-bottom: calc(var(--hfs) * -0.26);
 }
-/* Large decorative back plate */
-.hcq-wrap {
-  display: flex; flex-direction: column; align-items: stretch;
-  width: min(88vw, 820px); position: relative;
-}
-.hcq-back-line {
-  font-family: var(--sys); font-weight: 900;
-  font-size: var(--hfs);
-  line-height: 1; letter-spacing: -.04em; text-transform: uppercase;
-  color: rgba(249,249,248,.12);
-  display: block; text-align: center;
-  pointer-events: none; user-select: none;
-}
-/* Tagline overlay */
-.hero-taglines {
-  position: absolute; inset: 0;
-  pointer-events: none;
-}
-.hero-tag-row {
-  position: absolute; left: 0; right: 0;
-  display: flex; justify-content: flex-start; align-items: baseline;
-  font-family: var(--sys); font-weight: 900;
-  font-size: var(--hfs);
-  line-height: 1; letter-spacing: -.04em; text-transform: uppercase;
-  color: var(--white);
-  white-space: nowrap;
-  top: 0;
-}
-.hero-tag-row:nth-child(2) {
-  top: calc(var(--hfs) * 1);
-}
-.hero-tag-row:nth-child(3) {
-  top: calc(var(--hfs) * 2);
-}
 .hero-sub {
   font-family: var(--serif); font-style: italic;
   font-size: clamp(1rem, 1.9vw, 1.6rem); line-height: 1.45;
@@ -357,16 +323,15 @@ a { color: inherit; text-decoration: none; }
 }
 .dl-card-grid {
   display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: clamp(1.2rem, 2.5vw, 2.5rem); align-items: start;
+  gap: clamp(1rem, 2vw, 2rem); align-items: start;
 }
 .dl-util-grid {
   display: grid; grid-template-columns: repeat(2, 1fr);
-  gap: clamp(1.2rem, 2.5vw, 2.5rem); align-items: start;
-  max-width: 640px;
+  gap: clamp(1rem, 2vw, 2rem); align-items: start;
 }
 .dl-card {
   border-top: 2px solid var(--carbon); padding-top: 1.4rem;
-  display: flex; flex-direction: column; gap: .85rem;
+  display: flex; flex-direction: column; gap: 1rem;
 }
 .dl-card-label {
   font-family: var(--mono); font-size: var(--meta);
@@ -375,14 +340,15 @@ a { color: inherit; text-decoration: none; }
 .dl-preview {
   background: #ddddd9; overflow: hidden;
   display: flex; align-items: center; justify-content: center;
+  border-radius: 2px;
 }
 .dl-preview.sq  { aspect-ratio: 1 / 1; }
-.dl-preview.st  { aspect-ratio: 9 / 16; max-height: 280px; }
+.dl-preview.st  { aspect-ratio: 9 / 16; max-height: 420px; }
 .dl-preview.util { height: 180px; }
 #qr-display { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; }
 #qr-display canvas { max-width: 150px !important; max-height: 150px !important; width: auto !important; height: auto !important; }
 .dl-preview canvas { width: 100% !important; height: 100% !important; object-fit: cover; display: block; }
-.dl-preview.st canvas { object-fit: contain; width: auto !important; height: 100% !important; max-width: 100%; }
+.dl-preview.st canvas { width: 100% !important; height: 100% !important; object-fit: cover; display: block; }
 .dl-desc { font-size: .86rem; line-height: 1.65; opacity: .72; }
 .dl-btn { width: 100%; text-align: center; display: block; }
 .dl-btn:disabled { opacity: .4; cursor: default; pointer-events: none; }
@@ -546,17 +512,10 @@ footer {
   <div class="hero-top" aria-hidden="true"></div>
 
   <div class="hero-stack">
-    <div class="hcq-wrap">
-      <span class="hcq-back-line" aria-hidden="true">SPREAD</span>
-      <span class="hcq-back-line" aria-hidden="true">THE</span>
-      <span class="hcq-back-line" aria-hidden="true">WORD</span>
-      <div class="hero-taglines" aria-hidden="true">
-        <div class="hero-tag-row"><span>Spread</span></div>
-        <div class="hero-tag-row"><span>the</span></div>
-        <div class="hero-tag-row"><span>Word.</span></div>
-      </div>
-    </div>
-    <p class="hero-sub">Help more D.C. residents discover what&rsquo;s possible. The Spring Forum is free, open to all, and worth sharing.</p>
+    <span class="hw">Spread</span>
+    <span class="hop">the</span>
+    <span class="hw">Word.</span>
+    <p class="hero-sub">The Spring Forum is free, open to everyone, and it matters. Help us fill the room.</p>
   </div>
 
   <div class="hero-bottom">
@@ -581,25 +540,25 @@ footer {
       <div class="col-label">How to Share</div>
       <div class="col-body">
 
-        <h2>Your network is someone&rsquo;s next step.</h2>
-        <p class="msg-intro">You know people who would benefit from this. The guidance below is for when you&rsquo;re ready to share &mdash; not a script, just a starting point. Use it however it&rsquo;s useful, and make it yours.</p>
+        <h2>One share changes someone&rsquo;s week.</h2>
+        <p class="msg-intro">You know someone who needs this. Below is language you can steal, starters you can adapt, and graphics ready to post. Make it yours.</p>
 
         <div class="how-to">
           <div class="how-to-item">
             <span class="how-to-label">Square images &mdash; 1080&times;1080</span>
-            <p>Best for Instagram feed, LinkedIn, Facebook. Save and upload directly.</p>
+            <p>Save it. Post it. Instagram feed, LinkedIn, Facebook.</p>
           </div>
           <div class="how-to-item">
             <span class="how-to-label">Vertical images &mdash; 1080&times;1920</span>
-            <p>Best for Instagram Stories and LinkedIn Stories. Crop to your platform&rsquo;s safe zones as needed.</p>
+            <p>Built for Stories. Instagram, LinkedIn. Swipe-up ready.</p>
           </div>
           <div class="how-to-item">
             <span class="how-to-label">Tagging &amp; linking</span>
-            <p>Link to <strong>humancapital.withlevy.com</strong>. Tag <strong>@HumanCapitalQuarterly</strong> on LinkedIn and Instagram. Hashtag <strong>#SpringForum</strong> if you want it searchable.</p>
+            <p>Link to <strong>humancapital.withlevy.com</strong>. Tag <strong>@HumanCapitalQuarterly</strong>. Use <strong>#SpringForum</strong>.</p>
           </div>
         </div>
 
-        <p class="starters-head"><em>Copy starters.</em> Adapt freely.</p>
+        <p class="starters-head"><em>Steal these.</em> Make them yours.</p>
         <div class="starters-grid">
 
           <div class="starter-col">
@@ -638,33 +597,33 @@ footer {
 
     <div class="dl-header">
       <span class="sec-label">Share Kit</span>
-      <h2>Nine graphics, three angles.</h2>
-      <p>Each set of three tests a different emotional angle. Download what fits how you talk, or share all three. Every format has a preview below &mdash; what you download is full resolution.</p>
+      <h2>Nine graphics. Three angles.</h2>
+      <p>Each set works a different angle. Pick what sounds like you, or post them all. Previews below. Downloads are full resolution.</p>
     </div>
 
     <!-- ── Community ─────────────────────────────── -->
     <div class="dl-pillar">
-      <div class="dl-pillar-label">Community &mdash; Not Alone</div>
+      <div class="dl-pillar-label">Community &mdash; You&rsquo;re Not Alone</div>
       <div class="dl-card-grid">
 
         <div class="dl-card">
           <div class="dl-card-label">C1 &mdash; Square &mdash; 1080&times;1080</div>
           <div class="dl-preview sq"><canvas id="c1-canvas"></canvas></div>
-          <p class="dl-desc">Recognition. The moment of seeing yourself in the room. Best for a personal post.</p>
+          <p class="dl-desc">The feeling of not being alone in it. Personal post.</p>
           <button class="btn btn-outline dl-btn" id="btn-c1" disabled>Download &darr;</button>
         </div>
 
         <div class="dl-card">
           <div class="dl-card-label">C2 &mdash; Story &mdash; 1080&times;1920</div>
           <div class="dl-preview st"><canvas id="c2-canvas"></canvas></div>
-          <p class="dl-desc">Local pride. The civic frame. Best for Instagram or LinkedIn Story.</p>
+          <p class="dl-desc">DC is building something. Story format.</p>
           <button class="btn btn-outline dl-btn" id="btn-c2" disabled>Download &darr;</button>
         </div>
 
         <div class="dl-card">
           <div class="dl-card-label">C3 &mdash; Square &mdash; 1080&times;1080</div>
           <div class="dl-preview sq"><canvas id="c3-canvas"></canvas></div>
-          <p class="dl-desc">The invitation. Explicitly asks someone to bring a friend. Best for a DM or group post.</p>
+          <p class="dl-desc">A direct ask. Bring someone. DM or group post.</p>
           <button class="btn btn-outline dl-btn" id="btn-c3" disabled>Download &darr;</button>
         </div>
 
@@ -673,27 +632,27 @@ footer {
 
     <!-- ── Practical ──────────────────────────────── -->
     <div class="dl-pillar">
-      <div class="dl-pillar-label">Practical &mdash; Hands-On Help</div>
+      <div class="dl-pillar-label">Practical &mdash; Real Next Steps</div>
       <div class="dl-card-grid">
 
         <div class="dl-card">
           <div class="dl-card-label">P1 &mdash; Square &mdash; 1080&times;1080</div>
           <div class="dl-preview sq"><canvas id="p1-canvas"></canvas></div>
-          <p class="dl-desc">The outcome promise. Walk out with a real next step, not just inspiration.</p>
+          <p class="dl-desc">Walk out with a plan. Not inspiration &mdash; a next step.</p>
           <button class="btn btn-outline dl-btn" id="btn-p1" disabled>Download &darr;</button>
         </div>
 
         <div class="dl-card">
           <div class="dl-card-label">P2 &mdash; Story &mdash; 1080&times;1920</div>
           <div class="dl-preview st"><canvas id="p2-canvas"></canvas></div>
-          <p class="dl-desc">The credibility card. Distinguishes this event from panels and networking happy hours.</p>
+          <p class="dl-desc">This isn&rsquo;t a panel. It&rsquo;s a working session. Story format.</p>
           <button class="btn btn-outline dl-btn" id="btn-p2" disabled>Download &darr;</button>
         </div>
 
         <div class="dl-card">
           <div class="dl-card-label">P3 &mdash; Square &mdash; 1080&times;1080</div>
           <div class="dl-preview sq"><canvas id="p3-canvas"></canvas></div>
-          <p class="dl-desc">Friction removal. Free, accessible, no barriers. Best for neighborhood or group posts.</p>
+          <p class="dl-desc">Free. Accessible. No barriers. Neighborhood post.</p>
           <button class="btn btn-outline dl-btn" id="btn-p3" disabled>Download &darr;</button>
         </div>
 
@@ -702,27 +661,27 @@ footer {
 
     <!-- ── Strategic ──────────────────────────────── -->
     <div class="dl-pillar">
-      <div class="dl-pillar-label">Strategic &mdash; Where Work Is Headed</div>
+      <div class="dl-pillar-label">Strategic &mdash; The Bigger Picture</div>
       <div class="dl-card-grid">
 
         <div class="dl-card">
           <div class="dl-card-label">S1 &mdash; Square &mdash; 1080&times;1080</div>
           <div class="dl-preview sq"><canvas id="s1-canvas"></canvas></div>
-          <p class="dl-desc">Local reality. Grounds the macro workforce-shift in a DC truth.</p>
+          <p class="dl-desc">The skills gap is here, in DC. Big-picture post.</p>
           <button class="btn btn-outline dl-btn" id="btn-s1" disabled>Download &darr;</button>
         </div>
 
         <div class="dl-card">
           <div class="dl-card-label">S2 &mdash; Story &mdash; 1080&times;1920</div>
           <div class="dl-preview st"><canvas id="s2-canvas"></canvas></div>
-          <p class="dl-desc">Agency, not anxiety. Confident posture on a stressful topic. Best for LinkedIn Story.</p>
+          <p class="dl-desc">Work is changing. Here&rsquo;s what to do about it. Story format.</p>
           <button class="btn btn-outline dl-btn" id="btn-s2" disabled>Download &darr;</button>
         </div>
 
         <div class="dl-card">
           <div class="dl-card-label">S3 &mdash; Square &mdash; 1080&times;1080</div>
           <div class="dl-preview sq"><canvas id="s3-canvas"></canvas></div>
-          <p class="dl-desc">Brand meaning. Reclaims the term &ldquo;human capital&rdquo; as something human. Best for LinkedIn.</p>
+          <p class="dl-desc">What &ldquo;human capital&rdquo; actually means. LinkedIn.</p>
           <button class="btn btn-outline dl-btn" id="btn-s3" disabled>Download &darr;</button>
         </div>
 
@@ -739,7 +698,7 @@ footer {
           <div class="dl-preview util">
             <div id="qr-display"></div>
           </div>
-          <p class="dl-desc">Links directly to registration. Save to your camera roll and show it anywhere.</p>
+          <p class="dl-desc">Scan to register. Save it, show it, share it.</p>
           <button class="btn btn-outline dl-btn" id="btn-qr" disabled>Download QR Code</button>
         </div>
 
@@ -748,7 +707,7 @@ footer {
           <div class="dl-preview util">
             <canvas id="flyer-canvas"></canvas>
           </div>
-          <p class="dl-desc">Print-ready 8.5&times;11. Post at libraries, coffee shops, rec centers, and community boards.</p>
+          <p class="dl-desc">Print-ready 8.5&times;11. Libraries, coffee shops, community boards.</p>
           <button class="btn btn-outline dl-btn" id="btn-flyer" disabled>Download PDF Flyer</button>
         </div>
 
@@ -783,7 +742,7 @@ footer {
   <div class="ft">
     <div class="ft-brand">
       <div class="ft-wm">Human<br>Capital<br>Quarterly</div>
-      <p>A quarterly civic anchor for D.C.'s workforce and upskilling ecosystem. Recurring. Practical. For everyone who wants to build something real.</p>
+      <p>A quarterly civic forum for D.C. Workforce. Upskilling. Community. Recurring and real.</p>
     </div>
     <div class="ft-col">
       <h2>Spread the Word</h2>
